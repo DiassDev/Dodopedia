@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="items.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Dodopedia - Items</title>
+    <link rel="icon" type="image/x-icon" href="Specimen_Implant.webp">
+</head>
+
+    <body>
+        <div class="hero">
+            <h1>
+                <header>
+                    <img src="MagnifyingGlass_Icon.webp" id="img_h1">
+                    All Items
+                </header>
+            </h1>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search for items..." onkeyup="searchFunction()">
+            <div class="seacrh-results" id="results"></div>
+        </div>
+            <div class="container" id="items-grid">
+
+            </div>
+
+
+
+        <footer>
+            Pedro Dias
+            &copy; 2025 - All Rights Reserved
+        </footer>
+
+
+        <script>
+
+            const imageFolder = "images/";
+
+            const items = [
+    { name: "Iron", img: `${imageFolder}metal-ark.png` },
+    { name: "Wood", img: `${imageFolder}wood-ark.png` },
+    { name: "Stone", img: `${imageFolder}stone-ark.png` },
+    { name: "Hide", img: `${imageFolder}hide.webp` },
+    { name: "Flint", img: `${imageFolder}flint.webp` },
+    { name: "Amarberry", img: `${imageFolder}amarberry.webp` },
+    { name: "Azulberry", img: `${imageFolder}azulberry.webp` },
+    { name: "Mejoberry", img: `${imageFolder}mejoberry.webp` },
+    { name: "Narcoberry", img: `${imageFolder}narcoberry.webp` },
+    { name: "Stimberry", img: `${imageFolder}stimberry.webp` },
+    { name: "Tintoberry", img: `${imageFolder}tintoberry.webp` },
+    { name: "Cementing paste", img: `${imageFolder}cementing_paste.webp` },
+    { name: "Chitin", img: `${imageFolder}chitin.webp` },
+    { name: "Electronics", img: `${imageFolder}electronics.webp` },
+    { name: "Artifact of Chaos", img: `${imageFolder}artifact_of_chaos.webp` },
+    { name: "Arrtifact of Growth", img: `${imageFolder}artifact_of_growth.webp` },
+    { name: "Artifact of the Brute", img: `${imageFolder}artifact_of_the_brute.webp` },
+    { name: "Artifact of the Clever", img: `${imageFolder}artifact_of_the_clever.webp` },
+    { name: "Artifact of the Crag", img: `${imageFolder}artifact_of_the_crag.webp` },
+    { name: "Artifact of the Cunning", img: `${imageFolder}artifact_of_the_cunning.webp` },
+    { name: "Artifact of the Depths", img: `${imageFolder}artifact_of_the_depths.webp` },
+    { name: "Artifact of the Devious", img: `${imageFolder}artifact_of_the_devious.webp` },
+];
+
+
+
+            items.sort((a, b) => a.name.localeCompare(b.name));
+    
+            const grid = document.getElementById("items-grid");
+            
+            items.forEach(item => {
+                const div = document.createElement("div");
+                div.classList.add("item");
+                div.innerHTML = `
+                    <img src="${item.img}" alt="${item.name}">
+                    <p>${item.name}</p>
+                `;
+                grid.appendChild(div);
+            });
+        </script>
+
+    </body>
+</html>

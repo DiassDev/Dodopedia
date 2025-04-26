@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="dinos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Dodopedia - Dinos</title>
+    <link rel="icon" type="image/x-icon" href="Specimen_Implant.webp">
+</head>
+        <body>
+            <header>
+                <h1>
+                    <img src="Giganotosaurus_Egg.webp" id="img-h1">
+                    All Dinos/Creatures
+                </h1>
+            </header>
+            <div class="search-container">
+                <input type="text" id="search" placeholder="Search for dinos" onkeyup="searchFunction()">
+                <div class="seacrh-results" id="results"></div>
+            </div>
+                <div class="container" id="items-grid">
+    
+                </div>
+    
+    
+    
+            <footer>
+                Pedro Dias
+                &copy; 2025 - All Rights Reserved
+            </footer>
+    
+    
+            <script>
+
+                const items = [
+                    { name: "Allosaurus", img: "https://ark-unity.com/images/icons/Empty_AllosaurusHead_Icon.webp" },
+                    { name: "Ankylosaurus", img: "https://ark-unity.com/images/icons/Empty_AnkylosaurusHead_Icon.webp" },
+                    { name: "Baryonyx", img: "https://ark-unity.com/images/icons/Empty_BaryonyxHead_Icon.webp" },
+                    { name: "Brontosaurus", img: "https://ark-unity.com/images/icons/Empty_BrontosaurusHead_Icon.webp" },
+                    { name: "Carcharodonto", img: "https://ark-unity.com/images/icons/Empty_Carcharodontosaurus_DinoHead_Icon.webp" },
+                    { name: "Carnotaurus", img: "https://ark-unity.com/images/icons/Empty_CarnotaurusHead_Icon.webp" },
+                    { name: "Carbonemis", img: "https://i.namu.wiki/i/cBxbKzHoePfNj1AmPnf0FbPAym_VUYuySsgjuRAeGQX6m15gGiOi4qrvEg6vyiqvZLbp7p4E8TGdK7mz0YA-2Q.webp" },
+                    { name: "Dilophosaurus", img: "https://i.namu.wiki/i/43I2c-TIJASdNjbD7kZ4mvQuOWFgqUj4R4OCjb9MglbZqQfqUdVNBB8TpSIoLkADlQvwgRKPizBpTBQroKydhQ.webp" },
+                    { name: "Gallimimus", img: "https://ark-unity.com/images/icons/Empty_GallimimusHead_Icon.webp" },
+                    { name: "Giganotosaurus", img: "https://ark-unity.com/images/icons/Empty_GiganotosaurusHead_Icon.webp" },
+                    { name: "Iguanodon", img: "https://ark-unity.com/images/icons/Empty_IguanodonHead_Icon.webp" },
+                    { name: "Kentrosaurus", img: "https://ark-unity.com/images/icons/Empty_KentrosaurusHead_Icon.webp" },
+                    { name: "Argentavis", img: "https://i.namu.wiki/i/rv14n2aNJQ1-3aT81Wjxujt1BG8f7vmatIdam-E1bIc9Ku779qGhc5PXjI_JU-L2ED_e53mVKtPCKxMJNSL3dA.webp" },
+                    { name: "Parasaurolophus", img: "https://i.namu.wiki/i/mHyHodaao5W2ABIWQ8vy4jB_sLkTYec0whoSwr1NeQSgToP1xFCbZTPa3msI2iGDJQv2dhpB5BSuEBJG6QGWTQ.webp" },
+                    { name: "Spinosaurus", img: "https://i.namu.wiki/i/RFweW98fdobL6fgEhQt0sdkinCH4NLDpLOOd2zZLHpNMuffYkX56zlGXNrLm-bfwV5hbCIYPDV3jNyAByYUrPw.webp" },
+                ];
+    
+    
+                items.sort((a, b) => a.name.localeCompare(b.name));
+        
+                const grid = document.getElementById("items-grid");
+                
+                items.forEach(item => {
+                    const div = document.createElement("div");
+                    div.classList.add("item");
+                    div.innerHTML = `
+                        <img src="${item.img}" alt="${item.name}">
+                        <p>${item.name}</p>
+                    `;
+                    grid.appendChild(div);
+                });
+            </script>
+
+        </body>
+
+
+</html>
